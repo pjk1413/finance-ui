@@ -1,0 +1,76 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Chivo&family=Courier+Prime&display=swap");
+
+/* COLORS */
+.dark {
+    color: #201E1F;
+}
+
+.red {
+    color: #FF4000;
+}
+
+.pink {
+    color: #FAAA8D;
+}
+
+.green {
+    color: #50B2C0;
+}
+
+.light {
+    color: #FEEFDD;
+}
+
+.dark-bg {
+    background-color: #201E1F;
+}
+
+.red-bg {
+    background-color: #FF4000;
+}
+
+.pink-bg {
+    background-color: #FAAA8D;
+}
+
+.green-bg {
+    background-color: #50B2C0;
+}
+
+.light-bg {
+    background-color: #FEEFDD;
+}
+
+/* FONTS */
+.chivo {
+    font-family: 'Chivo', sans-serif;
+}
+
+.courier {
+    font-family: 'Courier Prime', monospace;
+}
+
+
+/* ALIGN */
+.txt-left {
+    text-align: left !important;
+}
+
+.txt-right {
+    text-align: right !important;
+}
+
+.left {
+    margin-right: auto;
+}
+
+.right {
+    margin-left: auto;
+}
+
+/* LINK */
+.link {
+    font-family: 'Courier Prime', monospace;
+    text-decoration: none;
+}
