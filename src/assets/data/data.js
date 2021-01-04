@@ -1,6 +1,6 @@
+export const finnUrl = 'http://192.168.1.57'
 
-
-const sidebarbuttons = [
+export const sidebarbuttons = [
     {
         id: 1,
         text: 'Projections',
@@ -17,5 +17,3 @@ const sidebarbuttons = [
         action: 'Watch-List'
     }
 ]
-
-export default sidebarbuttons;

@@ -13,27 +13,35 @@
 </template>
 
 
-
+// https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/
 <script>
+import axios from 'axios';
+import baseUrl from '../assets/data/data/finnUrl'
 
 export default {
   name: 'LoginbBox',
   data: function() {
     return {
-      user: 'patrick',
-      pass: '12345',
       username: '',
       password: ''
     }
   },
   methods: {
     login: function() {
+      axios.post('/auth/login', {
+        username: this.username,
+        password: this.password
+      }).then((response) => {
+        console.log(response);
+      }, (error) => {
+        console.log(error)
+      })
+
       if(this.user == this.username && this.pass == this.password) {
         sessionStorage.setItem("auth", 'true')
       } else {
         sessionStorage.setItem("auth", "")
       }
-
     }
   }
 }
