@@ -1,6 +1,7 @@
 <template>
   <div class="flex-container">
     <div class="center">
+
       <label for="username" class="dark courier">Username</label><br/>
       <input type="text" class="input-box chivo" id="username" v-model="username"><br/>
       
@@ -16,32 +17,34 @@
 // https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/
 <script>
 import axios from 'axios';
-import baseUrl from '../assets/data/data/finnUrl'
+// import baseUrl from '../assets/data/data/finnUrl'
+// import finnUrl from '../assets/data/data';
 
 export default {
   name: 'LoginbBox',
   data: function() {
     return {
+      alert: '',
       username: '',
       password: ''
     }
   },
   methods: {
     login: function() {
-      axios.post('/auth/login', {
+      axios.post('http://192.168.1.57:5000/auth/login', {
         username: this.username,
         password: this.password
       }).then((response) => {
-        console.log(response);
+        console.log(response.data)
+        if (response.data['token'] > 99) {
+          sessionStorage.setItem('auth', response.data['token'])
+        } else {
+          // sessionStorage.setItem('auth', '')
+          alert('Incorrect username or password')
+        }
       }, (error) => {
         console.log(error)
       })
-
-      if(this.user == this.username && this.pass == this.password) {
-        sessionStorage.setItem("auth", 'true')
-      } else {
-        sessionStorage.setItem("auth", "")
-      }
     }
   }
 }
