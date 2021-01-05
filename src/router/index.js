@@ -11,21 +11,20 @@ const routes = [
     name: 'Home',
     component: Home,
     beforeEnter: (to, from, next) => {
-      console.log(sessionStorage.getItem('auth'))
       if(sessionStorage.getItem('auth') === 'true') {
-        console.log("IN")
         next()
       } else {
         next({
           path: '/login',
           name: 'Login',
+          alias: '/',
           component: Login
         })
       }
     }
   },
   {
-    path: '/login',
+    path: '/',
     name: 'Login',
     component: Login
   }
