@@ -2,7 +2,7 @@
     <div class="green-bg">
         <ul class='nav'>
             <li class="light-bg"><router-link class="dark link-item" to="/home">Home</router-link></li>
-            <li v-if="display()" class="light-bg" style="float:right"><a class="dark link-item" v-on:click="removeToken" href="/login">Logout</a></li>
+            <li v-if="display()" class="light-bg" style="float:right"><a class="dark link-item" v-on:click="removeToken()" href="/login">Logout</a></li>
         </ul>     
     </div>
 </template>
@@ -21,7 +21,6 @@ export default {
         },
         display: function() {
             const path = window.location.pathname.split('/')[1]
-            console.log(path)
             if(path === 'home') {
                 return true
             } else {

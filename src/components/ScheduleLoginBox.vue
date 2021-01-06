@@ -17,8 +17,9 @@
 // https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/
 <script>
 import axios from 'axios';
+// import ScheduleBox from './ScheduleBox';
 // import baseUrl from '../assets/data/data/finnUrl'
-import url from '../assets/data/data';
+// import finnUrl from '../assets/data/data';
 
 export default {
   name: 'LoginBox',
@@ -31,13 +32,13 @@ export default {
   },
   methods: {
     login: function() {
-      axios.post(url.base + '/auth/login', {
+      axios.post('http://192.168.1.57:5000/auth/login', {
         username: this.username,
         password: this.password
       }).then((response) => {
+
         if (parseInt(response.data['token']) > 99) {
           sessionStorage.setItem('auth', response.data['token'])
-          this.$router.push({path: '/home'})
         } else {
           alert('Incorrect username or password')
         }

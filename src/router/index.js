@@ -1,12 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import Login from '../views/Login'
-import axios from 'axios';
+import Schedule from '../views/Schedule.vue';
+import Login from '../views/Login.vue'
+// import axios from 'axios';
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/schedule',
+    name: 'Schedule',
+    component: Schedule
+  },
   {
     path: '/home',
     name: 'Home',
